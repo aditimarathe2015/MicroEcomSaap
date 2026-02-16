@@ -2,5 +2,24 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./superadmin-e2e"
+    },
+    {
+      "path": "./superadmin"
+    },
+    {
+      "path": "./tenantadmin-e2e"
+    },
+    {
+      "path": "./tenantadmin"
+    },
+    {
+      "path": "./webstore-e2e"
+    },
+    {
+      "path": "./webstore"
+    }
+  ]
 }
