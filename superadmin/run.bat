@@ -1,0 +1,1 @@
+set CONNECTION_STRING=postgresql://postgres:b42886eca1ac49b8ac1f223caad998d9@localhost:5432/db_gen

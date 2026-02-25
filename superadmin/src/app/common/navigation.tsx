@@ -1,3 +1,5 @@
+import { Route, Routes, Link } from 'react-router-dom';
+
 export default function Navigation() {
   return (
    <div className="w-64 bg-gray-800 text-white flex flex-col">
@@ -13,6 +15,10 @@ export default function Navigation() {
                             <i className="h-6 w-6 mr-3"></i>
                             <span>Analytics</span>
                         </a>
+                         <Link to="/tenetuser" className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-gray-100 rounded-md">
+                            <i className="h-6 w-6 mr-3"></i>
+                            <span>Tenant Admin</span>
+                        </Link>
                         <a href="#" className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-gray-100 rounded-md">
                             <i className="h-6 w-6 mr-3"></i>
                             <span>Users</span>

@@ -1,11 +1,13 @@
 import Navigation from "./common/navigation";
+import { Link } from 'react-router-dom';
 
+export default function TenentUsers() {
 
-export default function Adminuser() {
+    
   return (
         <div className="bg-gray-100">
             <div className="flex h-screen bg-gray-200">
-            s <Navigation/>
+             <Navigation/>
                 {/* Main content */}
                 <div className="flex-1 flex flex-col overflow-hidden">
                     {/* Header */}
@@ -14,9 +16,12 @@ export default function Adminuser() {
                             <h1 className="text-xl font-semibold text-gray-800">User Management</h1>
                         </div>
                         <div className="flex items-center">
-                            <button className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700">
+                            {/* <button className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700">
                                 Add New User
-                            </button>
+                            </button> */}
+                            <Link to="/adduser" className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700">
+                                Add New User
+                            </Link>
                         </div>
                     </header>
 
@@ -42,24 +47,6 @@ export default function Adminuser() {
                                                 <td className="py-2 px-4 border-b">John Doe</td>
                                                 <td className="py-2 px-4 border-b">john.doe@example.com</td>
                                                 <td className="py-2 px-4 border-b">Admin</td>
-                                                <td className="py-2 px-4 border-b text-center">
-                                                    <button className="text-indigo-600 hover:text-indigo-900 text-sm mr-2">Edit</button>
-                                                    <button className="text-red-600 hover:text-red-900 text-sm">Delete</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="py-2 px-4 border-b">Jane Smith</td>
-                                                <td className="py-2 px-4 border-b">jane.smith@example.com</td>
-                                                <td className="py-2 px-4 border-b">Editor</td>
-                                                <td className="py-2 px-4 border-b text-center">
-                                                    <button className="text-indigo-600 hover:text-indigo-900 text-sm mr-2">Edit</button>
-                                                    <button className="text-red-600 hover:text-red-900 text-sm">Delete</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="py-2 px-4 border-b">Sam Wilson</td>
-                                                <td className="py-2 px-4 border-b">sam.wilson@example.com</td>
-                                                <td className="py-2 px-4 border-b">Viewer</td>
                                                 <td className="py-2 px-4 border-b text-center">
                                                     <button className="text-indigo-600 hover:text-indigo-900 text-sm mr-2">Edit</button>
                                                     <button className="text-red-600 hover:text-red-900 text-sm">Delete</button>

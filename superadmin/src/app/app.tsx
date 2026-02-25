@@ -1,7 +1,10 @@
 import { Route, Routes, Link } from 'react-router-dom';
 import Login from './login';
 import Dashboard from './dashboard';
-import Adminuser from './createAdminuser';
+
+import TenentUsers from './tenentUsers';
+import TenentUser from './createUser';
+
 
 export function App() {
   return (
@@ -19,10 +22,16 @@ export function App() {
           <Dashboard/>
           }
         />
-         <Route
-          path="/createAdminuser"
+          <Route
+          path="/tenetuser"
           element={
-          <Adminuser/>
+          <TenentUsers/>
+          }
+        />
+         <Route
+          path="/adduser"
+          element={
+          <TenentUser/>
           }
         />
       </Routes>
