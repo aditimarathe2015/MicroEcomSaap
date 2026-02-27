@@ -22,10 +22,13 @@
       "path": "./webstore"
     },
     {
-      "path": "./api-e2e"
+      "path": "./nodeApi"
     },
     {
-      "path": "./api"
+      "path": "./backend-e2e"
+    },
+    {
+      "path": "./backend"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@org/api",
+  "name": "@org/backend",
   "version": "0.0.1",
   "private": true,
   "nx": {
@@ -12,15 +12,15 @@
         "defaultConfiguration": "production",
         "options": {
           "platform": "node",
-          "outputPath": "api/dist",
+          "outputPath": "backend/dist",
           "format": [
             "cjs"
           ],
           "bundle": false,
-          "main": "api/src/server.js",
-          "tsConfig": "api/tsconfig.app.json",
+          "main": "backend/src/main.ts",
+          "tsConfig": "backend/tsconfig.app.json",
           "assets": [
-            "api/src/assets"
+            "backend/src/assets"
           ],
           "esbuildOptions": {
             "sourcemap": true,
@@ -48,8 +48,8 @@
         "cache": true,
         "executor": "@nx/js:prune-lockfile",
         "outputs": [
-          "{workspaceRoot}/api/dist/package.json",
-          "{workspaceRoot}/api/dist/package-lock.json"
+          "{workspaceRoot}/backend/dist/package.json",
+          "{workspaceRoot}/backend/dist/package-lock.json"
         ],
         "options": {
           "buildTarget": "build"
@@ -61,7 +61,7 @@
         ],
         "cache": true,
         "outputs": [
-          "{workspaceRoot}/api/dist/workspace_modules"
+          "{workspaceRoot}/backend/dist/workspace_modules"
         ],
         "executor": "@nx/js:copy-workspace-modules",
         "options": {
@@ -83,15 +83,15 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@org/api:build",
+          "buildTarget": "@org/backend:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@org/api:build:development"
+            "buildTarget": "@org/backend:build:development"
           },
           "production": {
-            "buildTarget": "@org/api:build:production"
+            "buildTarget": "@org/backend:build:production"
           }
         }
       },
