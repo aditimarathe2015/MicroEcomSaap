@@ -20,6 +20,12 @@
     },
     {
       "path": "./webstore"
+    },
+    {
+      "path": "./backend-e2e"
+    },
+    {
+      "path": "./backend"
     }
   ]
 }
