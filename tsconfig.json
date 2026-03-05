@@ -20,15 +20,6 @@
     },
     {
       "path": "./webstore"
-    },
-    {
-      "path": "./nodeApi"
-    },
-    {
-      "path": "./backend-e2e"
-    },
-    {
-      "path": "./backend"
     }
   ]
 }
