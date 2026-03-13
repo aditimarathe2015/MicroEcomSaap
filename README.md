@@ -16,6 +16,8 @@ npx nx g @nx/js:lib packages/pkg1 --publishable --importPath=@my-org/pkg1
 ```
 ## Run API Project 
 node : nx serve api
+nx serve superadmin
+
 
 
 ## Run tasks
