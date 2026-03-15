@@ -3,13 +3,13 @@ import jwt from "jsonwebtoken";
 export const authMiddleware = (req, res, next) => {
   try {
     const token = req.headers.authorization;
-
+   console.log("Received token:", token);
     if (!token) {
       return res.status(401).json({ message: "Token required" });
     }
 
     const decoded = jwt.verify(token, "secret_key");
-
+     console.log("Decoded token:", decoded);
     req.user = decoded;
 
     next(); // move to next middleware or controller
