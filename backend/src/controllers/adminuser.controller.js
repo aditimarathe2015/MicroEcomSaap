@@ -24,6 +24,7 @@ export const createAdminUser = async (req, res) => {
       url,
       username,
       password,
+      
     };
 
     adminUsers.push(adminUser);

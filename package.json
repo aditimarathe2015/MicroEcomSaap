@@ -2,7 +2,13 @@
   "name": "@org/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky",
+    "test": "nx affected -t test --uncommitted"
+  },
+  "scripts": {
+  "lint": "eslint ."
+},
   "private": true,
   "devDependencies": {
     "@eslint/js": "^9.8.0",
@@ -53,6 +59,7 @@
     "eslint-plugin-jsx-a11y": "6.10.1",
     "eslint-plugin-react": "7.35.0",
     "eslint-plugin-react-hooks": "5.0.0",
+    "husky": "^9.1.7",
     "jest": "^30.0.2",
     "jest-environment-jsdom": "^30.0.2",
     "jest-environment-node": "^30.0.2",
@@ -87,6 +94,7 @@
   "dependencies": {
     "axios": "^1.6.0",
     "express": "^4.21.2",
+    "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.3",
     "next": "~16.0.1",
     "react": "^19.0.0",
