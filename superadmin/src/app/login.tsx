@@ -1,25 +1,34 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getSuperAdmin } from './api/superAdmin';
+import { login } from './api/superAdmin';
+import axios from 'axios';
 
 export default function Login() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError('');
 
     try {
-      const result = await getSuperAdmin();
-      
-      if (result[0].email === email && result[0].password === password) {
+      const result = await login({ username, password });
+      console.log(result);
+      if (result.token) {
         navigate('/dashboard');
       } else {
-        setError('Invalid email or password');
+        setError(result.message || 'Invalid email or password');
       }
     } catch (error) {
+      if (axios.isAxiosError(error)) {
+        setError(
+          error.response?.data?.message || 'Unable to login with these credentials'
+        );
+      } else {
+        setError('Unexpected error during login');
+      }
       console.error('Error fetching super admin data:', error);
     }
   };
@@ -28,26 +37,26 @@ export default function Login() {
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-          Admin Login
+          Admin Login 111
         </h2>
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label
-              htmlFor="email"
+              htmlFor="username"
               className="block text-gray-700 text-sm font-bold mb-2"
             >
-              Email
+              Username
             </label>
             <input
-              type="email"
-              id="email"
-              name="email"
+              type="text"
+              id="username"
+              name="username"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Enter your email"
+              placeholder="Enter your username"
               required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="mb-6">

@@ -3,10 +3,10 @@
 import { Router } from 'express';
 import { login } from '../controllers/auth.controller';
 import { createAdminUser ,getAdminUser} from '../controllers/adminuser.controller.js';
-import helmet from "helmet";
-
-
 import { authMiddleware } from '../middleware/authMiddleware.js';
+import helmet from "helmet";
+import cors from 'cors';
+
 
 
 const router = Router();
@@ -17,6 +17,13 @@ router.use(
     contentSecurityPolicy: false, // example override
   })
 );
+router.use(cors({
+  origin: 'http://localhost:4200',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
+
 
 router.post('/login', login);
 router.get('/adminusers',authMiddleware, getAdminUser);

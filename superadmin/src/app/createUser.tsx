@@ -1,6 +1,6 @@
 import Navigation from "./common/navigation";
 import React, { useState } from 'react';
-import {postTenent } from './api/superAdmin'
+import {createuser } from './api/superAdmin'
 
 export default function TenentUser() {
     
@@ -14,7 +14,7 @@ const [formData, setFormData] = useState<{
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await postTenent(formData);
+    await createuser(formData);
     console.log('Form submitted with data:', formData);
    
   };
